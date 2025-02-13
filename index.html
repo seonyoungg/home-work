@@ -5,11 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HTML/CSS 과제</title>
     <style>
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      span {
+        padding: 0;
+        margin: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+        color: #333;
+      }
+
       body {
         margin: 0;
         padding: 0;
         font-family: "Noto Sans KR", sans-serif;
-        background-color: #f5f5f5;
+        background-color: #96ccff;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -17,43 +34,127 @@
       }
 
       .profile-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         background: white;
         border-radius: 20px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        padding: 2rem;
-        width: 300px;
+        box-shadow: 0 10px 20px rgba(0, 39, 124, 0.1);
         text-align: center;
       }
 
+      .profile-wrap {
+        padding-top: 1.5rem;
+        position: relative;
+        overflow: visible; /* 툴팁이 안 잘리게 함 */
+      }
+
       .profile-image {
+        position: relative;
+        display: block;
+        margin: 0 auto;
         width: 150px;
         height: 150px;
         border-radius: 50%;
-        margin-bottom: 1.5rem;
+        border: 5px solid #96ccff;
+        background-color: #222;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+
+      .profile-image > img {
+        /* display: none; */
+        width: 100%;
+        height: 100%;
         object-fit: cover;
-        border: 5px solid #f0f0f0;
+      }
+
+      .tooltip {
+        position: absolute;
+        top: -25px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, 0.8);
+        padding: 0.5rem 0.75rem;
+        padding-left: 2.25rem;
+        border-radius: 0.5rem;
+        white-space: nowrap;
+        font-size: 0.875rem;
+        color: #fff;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        display: none;
+      }
+
+      .tooltip::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: 6px;
+        border-style: solid;
+        border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
+      }
+
+      .tooltip::before {
+        content: "";
+        width: 1rem;
+        height: 1rem;
+        display: block;
+        position: absolute;
+        left: 0.75rem;
+        top: 50%;
+        transform: translateY(-50%);
+        background: url(/src/assets/images/github-mark-white.svg) no-repeat
+          center center;
+        background-size: contain;
+      }
+
+      .profile-wrap:hover .tooltip {
+        display: block;
+      }
+
+      .tooltip img {
+        width: 1rem;
+        height: 1rem;
+      }
+
+      .text-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+        padding: 1.5rem 5rem;
+        border-radius: 0 0 20px 20px;
+      }
+
+      .text-wrap.homework {
+        background: #ebebeb;
+        padding: 1rem;
+      }
+
+      .point-color {
+        font-weight: 700;
       }
 
       .name {
         font-size: 1.5rem;
         font-weight: bold;
         color: #333;
-        margin-bottom: 0.5rem;
       }
 
       .bio {
         color: #666;
-        line-height: 1.6;
-        margin-bottom: 1.5rem;
       }
 
       .homework-links {
+        margin: 0;
         display: flex;
         justify-content: center;
         gap: 1rem;
-        margin: 0;
-        padding: 0;
         list-style: none;
+        background: #ebebeb;
       }
 
       .homework-links a {
@@ -63,7 +164,8 @@
       }
 
       .homework-links a:hover {
-        color: #007bff;
+        color: #40a3ff;
+        font-weight: 600;
       }
     </style>
     <link
@@ -77,18 +179,28 @@
   </head>
   <body>
     <div class="profile-card">
-      <img
-        src="./src/assets/images/ssam.jpg"
-        alt="프로필 이미지"
-        class="profile-image"
-      />
-      <h1 class="name">선영</h1>
-      <p class="bio">멋쟁이 사자처럼 프론트엔드 부트캠프 13기 박선영입니다.</p>
-      <p>과제 결과는 링크를 선택해주세요.</p>
-      <ul class="homework-links">
-        <li><a href="./src/md/markdown.md">마크다운 문법</a></li>
-        <li><a href="./src/md/retrospect.md">회고</a</li>
-      </ul>
+      <div class="profile-wrap">
+        <a
+          href="https://github.com/seonyoungg/home-work"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="profile-image"
+        >
+          <img src="./src/assets/images/seon.png" alt="프로필 이미지" />
+        </a>
+        <div class="tooltip">클릭 시 GitHub저장소로 연결됩니다</div>
+      </div>
+      <div class="text-wrap">
+        <h1 class="name">선영</h1>
+        <p class="bio">멋쟁이 사자처럼 프론트엔드 부트캠프 13기🦁</p>
+      </div>
+      <div class="text-wrap homework">
+        <p class="point-color">과제 결과는 링크를 선택해주세요👇</p>
+        <ul class="homework-links">
+          <li><a href="./src/md/markdown.md">마크다운 문법</a></li>
+          <li><a href="./src/md/retrospect.md">회고</a></li>
+        </ul>
+      </div>
     </div>
   </body>
 </html>

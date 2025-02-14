@@ -555,11 +555,15 @@
 
     </detail>
 
+## <span style="color:#F2F2F2">마크다운관련 VScode 에디터</span>
+
+[![마크다운관련-VScode확장팩바로가기](../assets/images/markdown.jpg)](https://marketplace.visualstudio.com/items?itemName=sndst00m.markdown-github-dark-pack "마크다운관련-VScode확장팩바로가기")
+
 ---
 
-> #### 참고 사이트🖥️
+> #### 참고문헌
 >
-> - [daringfireball](https://daringfireball.net/projects/markdown/syntax "마크다운참조")
+> - 🔗 [https://daringfireball.net/projects/markdown/syntax](https://daringfireball.net/projects/markdown/syntax "사이트로 이동하기")
 
 <!-- 8. 링크 정의 -->
 

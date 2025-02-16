@@ -265,9 +265,9 @@ git checkout <커밋 해시> ///특정 커밋으로 이동
   - 하이퍼링크는 사용자가 웹 페이지를 탐색할 수 있도록 연결해주는 요소
 
   ```html
-  <a href="https://example.com" target="_blank" rel="noopener noreferrer"
-    >예제 링크</a
-  >
+  <a href="https://example.com" target="_blank" rel="noopener noreferrer">
+    예제 링크
+  </a>
   ```
 
   1. **href**

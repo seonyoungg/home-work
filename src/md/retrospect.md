@@ -137,4 +137,174 @@ git checkout <커밋 해시> ///특정 커밋으로 이동
 
 ## Figma
 
-## Html & Css
+## HTML
+
+- HyperText 마크업 언어(HTML)는 웹에 표시되는 문서의 구조를 설명하는 표준 마크업 언어
+
+```HTML
+<!--HTML의 기본구조-->
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8" />
+      <title>Machine Learning Workshop</title>
+      <meta name="viewport" content="width=device-width" />
+    </head>
+    <body>
+
+    </body>
+  </html>
+```
+
+### 📖 문서형 선언
+
+1. HTML5 문서형 선언
+
+```HTML
+<!DOCTYPE html>
+```
+
+2. HTML4.01 문서형 선언
+
+```HTML
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+```
+
+3. XHTML 1.0 문서형 선언
+
+- XHTML 1.0은 HTML을 XML 형식에 맞게 엄격하게 작성하도록 만든 표준
+- XHTML 문서는 XML 문법을 따라야 하므로, 다음과 같은 규칙이 필요
+  - 모든 태그는 반드시 소문자로 작성해야 함.
+  - 모든 태그는 닫아야 함. `(<br> → <br />`)
+  - 속성 값은 반드시 따옴표로 감싸야 함. (width=100 → width="100")
+
+```HTML
+   <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+```
+
+|     버전      |                특징                 |     사용 여부     |
+| :-----------: | :---------------------------------: | :---------------: |
+|   **HTML5**   | 간단한 `<!DOCTYPE html>`, 최신 표준 | ✅ 현재 주로 사용 |
+| **HTML4.01**  |    구버전, 일부 비표준 요소 허용    |  HTML5로 대체됨   |
+| **XHTML 1.0** |    XML 문법을 따름, 엄격한 문법     |
+
+### 📖 시맨틱 HTML
+
+- ### 이미지 태그 `<img>`
+
+|  속성   | 설명                                                                                                             |
+| :-----: | :--------------------------------------------------------------------------------------------------------------- |
+|   alt   | 이미지가 로드되지 않거나, 시각적으로 볼 수 없는 사용자에게 이미지의 내용을 설명하는 역할. 웹 접근성 개선에 중요. |
+|   src   | 이미지의 기본 경로 설정.                                                                                         |
+| srcset  | 여러 해상도의 이미지를 제공하여 반응형 이미지 적용 가능.                                                         |
+|  sizes  | 뷰포트 크기에 따라 표시할 이미지 크기를 지정.                                                                    |
+| loading | **지연 로딩(Lazy Loading)**을 적용하여 화면에 보일 때만 이미지를 로드함. **성능 최적화**에 도움.                 |
+|         |
+
+<img src="../assets/images/jjang.jpg" alt="음료마시는짱구" width="100" height="100" >
+
+```html
+<img
+  src="../assets/images/jjang.jpg"
+  alt="음료마시는짱구"
+  srcset="../assets/images/jjang.jpg 400w, ../assets/images/jjang-xl.jpg 800w"
+  sizes="(max-width: 800px) 400px, 800px"
+  loading="lazy"
+/>
+```
+
+1. 적절한 확장자 사용의 필요
+
+- ✅ WebP, Avif, Svg : 파일 크기가 작고 품질이 좋음
+- ❌ PNG, JPG는 필요할 때만 사용 : 파일 크기가 상대적으로 큼
+
+2. SVG 관련
+
+- `<img src="icon.svg" alt="홈 아이콘" />`
+
+- `<svg>태그` 직접 사용 시 `alt속성`을 사용할 수 없음  
+   -> 대체 텍스트를 제공하려면 `aria-label` 또는 `<title>태그`를 사용해야 함.
+  | 속성 | 설명 |
+  |------------|-----------------------------------------------------------|
+  | `aria-label` | SVG가 중요한 의미를 가질 때 대체 텍스트 제공. 버튼, 링크 등 **클릭 가능한 요소에 적합**. |
+  | `<title>` | 스크린 리더가 읽을 수 있으며, 툴팁으로도 표시될 가능성이 있음. **정보 제공용 SVG에 적합**. |
+
+  - 클릭 가능한 SVG (예: 버튼 아이콘) → aria-label 사용
+    ```html
+    <button aria-label="메뉴 열기">
+      <svg>...</svg>
+    </button>
+    ```
+  - 정보 제공용 SVG (예: 아이콘, 로고) → `<title>` 사용
+
+    ✅ title 태그를 추가하면 스크린 리더가 읽을 수 있으며, 툴팁 역할도 가능.
+
+    ```html
+    <svg>
+      <title>홈 아이콘</title>
+      <path d="..." />
+    </svg>
+    ```
+
+- ### 피규어 태그 `<figure>`
+
+  \- `<figure>` 태그는 이미지, 그래프, 코드, 표 등을 포함하는 **자급자족형 콘텐츠(Self-contained Content)**를 감싸는 시맨틱 태그
+
+  ✅ 주로 `<figcaption>` 태그와 함께 사용하여 설명을 추가  
+  ✅ 이미지뿐만 아니라 코드, 비디오, 오디오, 표에도 사용 가능
+
+  ```html
+  <figure>
+    <img src="image.jpg" alt="설명" />
+    <figcaption>이미지 설명 텍스트</figcaption>
+  </figure>
+  ```
+
+- ### 하이퍼링크 태그 `<a>`
+
+  하이퍼링크는 사용자가 웹 페이지를 탐색할 수 있도록 연결해주는 요소
+
+  ```html
+  <a href="https://example.com" target="_blank" rel="noopener noreferrer"
+    >예제 링크</a
+  >
+  ```
+
+1. href
+   | 값 | 설명 |
+   | ------ | ------------------------------------------------------------------------------------- |
+   | URL | 클릭 시 이동할 웹 주소 설정 `<a href="https://example.com">웹사이트 이동</a>` |
+   | mailto | 클릭 시 이메일 클라이언트 실행 `<a href="mailto:example@email.com">이메일 보내기</a>` |
+   | tel | 클릭 시 전화 연결 `<a href="tel:010-1234-5678">전화 걸기</a>` |
+
+2. target  
+   💡 `target="\_blank"` 사용 시 보안 이슈 해결을 위해 `rel="noopener noreferrer"` 추가 권장!
+   | 값 | 설명 |
+   |------------|------------------------------------|
+   |\_blank| 새 탭 또는 새 창에서 링크 열기|
+   |\_self| **현재 창(기본값)**에서 링크 열기|
+   |\_parent| 부모 프레임에서 링크 열기 (프레임 사용 시)|
+   |\_top| 최상위 창에서 링크 열기 (프레임|
+
+3. rel
+   | 값 | 설명 |
+   | --- | ---- |
+   |nofollow| 검색 엔진이 링크를 따라가지 않도록 설정 (SEO 최적화에 사용)|
+   |noopener| 새 창(\_blank)에서 열린 페이지가 부모 창을 조작하지 못하도록 차단 (보안)|
+   |noreferrer| 링크를 클릭한 페이지의 referrer(출처) 정보를 전달하지 않음|
+
+4. download  
+   링크를 클릭하면 해당 파일을 다운로드
+   ```html
+   <a href="file.zip" download>파일 다운로드</a>
+   ```
+
+> 하이퍼링크의 웹접근성 : aria-label, title
+>
+> ```html
+> <a href="https://example.com" aria-label="홈페이지로 이동">
+>   <img src="home.png" alt="홈" />
+> </a>
+>
+> <a href="https://example.com" title="클릭하면 홈페이지로 이동">홈페이지</a>
+> ```

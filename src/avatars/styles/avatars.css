@@ -1,0 +1,58 @@
+@import "/src/common/modern-reset.css";
+
+body {
+  background-color: #222;
+}
+
+.img-box-wrap {
+  background-color: #fff;
+  padding: 100px;
+
+  .img-group {
+    width: fit-content;
+    margin: 0 auto;
+  }
+}
+
+.img-box {
+  display: inline-block;
+  position: relative;
+  margin-right: 20px;
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+  }
+
+  .circle {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: #dbdbdb;
+    border-radius: 50%;
+    bottom: 0;
+    right: 0;
+  }
+
+  .circle.on {
+    background-color: #4cfe88;
+  }
+}
+
+.img-group.male {
+  .img-box {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .img-box-wrap {
+    padding: 100px 16px;
+  }
+}

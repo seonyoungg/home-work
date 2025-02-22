@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HTML/CSS 과제</title>
+    <link rel="stylesheet" href="/src/common/modern-reset.css" />
     <style>
       p,
       h1,
@@ -25,7 +26,7 @@
       body {
         margin: 0;
         padding: 0;
-        font-family: "Noto Sans KR", sans-serif;
+        font-family: 'Noto Sans KR', sans-serif;
         background-color: #96ccff;
         display: flex;
         justify-content: center;
@@ -93,7 +94,7 @@
       }
 
       .tooltip::after {
-        content: "";
+        content: '';
         position: absolute;
         top: 100%;
         left: 50%;
@@ -104,7 +105,7 @@
       }
 
       .tooltip::before {
-        content: "";
+        content: '';
         width: 1rem;
         height: 1rem;
         display: block;
@@ -129,7 +130,7 @@
       .text-wrap {
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 0.75rem;
         width: 100%;
         padding: 1.5rem 5rem;
         border-radius: 0 0 20px 20px;
@@ -142,6 +143,7 @@
 
       .point-color {
         font-weight: 700;
+        text-align: center;
       }
 
       .name {
@@ -204,8 +206,9 @@
       <div class="text-wrap homework">
         <p class="point-color">과제 결과는 링크를 선택해주세요👇</p>
         <ul class="homework-links">
-          <li><a href="./src/md/markdown.md">마크다운 문법</a></li>
-          <li><a href="./src/md/retrospect.md">회고</a></li>
+          <!-- <li><a href="./src/md/markdown.md">마크다운 문법</a></li> -->
+          <!-- <li><a href="./src/md/retrospect.md">회고</a></li> -->
+          <li><a href="./src/avatars/avatars.html">아바타</a></li>
         </ul>
       </div>
     </div>

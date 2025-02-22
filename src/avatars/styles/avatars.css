@@ -1,9 +1,5 @@
 @import "/src/common/modern-reset.css";
 
-body {
-  background-color: #222;
-}
-
 .img-box-wrap {
   background-color: #fff;
   padding: 100px;

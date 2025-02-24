@@ -1,4 +1,4 @@
-@import "../../src/common/modern-reset.css";
+/* @import "/src/common/modern-reset.css"; */
 
 .img-box-wrap {
   background-color: #fff;
@@ -8,10 +8,10 @@
   .img-group {
     width: fit-content;
     margin: 0 auto;
-  }
 
-  &:not(:first-child) {
-    margin-top: 20px;
+    &:not(:first-child) {
+      margin-top: 20px;
+    }
   }
 }
 

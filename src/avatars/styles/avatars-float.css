@@ -1,5 +1,5 @@
 /* @import "/src/common/modern-reset.css"; */
-/* .sr-only {
+.sr-only {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -9,54 +9,46 @@
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
-} */
+}
 
 .img-box-wrap {
-  background-color: #fff;
   padding: 100px;
-  font-size: 0;
+}
 
-  .img-group {
-    width: fit-content;
-    margin: 0 auto;
+.img-group {
+  /* background-color: pink; */
+  display: flow-root;
+  width: fit-content;
+  margin: 0 auto;
 
-    /* &:not(:first-child) {
-      margin-top: 20px;
-    } */
+  &:not(:first-child) {
+    margin-top: 20px;
   }
 }
 
 .img-box {
-  display: inline-block;
   position: relative;
-  margin: 10px;
-  /* 
-  &:last-child {
-    margin-right: 0;
-  } */
+  float: left;
+
+  &:not(:last-child) {
+    margin-right: 1.25rem;
+  }
 
   img {
     border-radius: 50%;
   }
 
   .status {
-    position: absolute;
     width: 16px;
     height: 16px;
-    background-color: #dbdbdb;
-    border: 1px solid #fff;
     border-radius: 50%;
+    position: absolute;
     bottom: 0;
     right: 0;
+    background-color: #dbdbdb;
   }
 
   .status.login {
     background-color: #4cfe88;
-  }
-}
-
-@media screen and (max-width: 540px) {
-  .img-box-wrap {
-    padding: 100px 16px;
   }
 }

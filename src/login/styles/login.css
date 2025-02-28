@@ -1,1 +1,7 @@
-/* CSS를 활용하여 레이아웃 및 스타일링을 완성해주세요 */
+.login-page-wrap {
+  padding: 70px 15px 111px 15px;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 45px;
+}

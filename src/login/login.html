@@ -1,1 +1,97 @@
-<!-- HTML 마크업을 작성해 주세요 -->
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="shortcut icon"
+      href="/src/assets/favicon/likelion.ico"
+      type="image/x-icon"
+    />
+    <link rel="icon" href="/src/assets/favicon/likelion.svg" />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+    <link
+      rel="stylesheet"
+      as="style"
+      href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT.css"
+    />
+    <link rel="stylesheet" href="../common/modern-reset.css" />
+    <link rel="stylesheet" href="./component/login-input.css" />
+    <link rel="stylesheet" href="./styles/login.css" />
+  </head>
+  <body>
+    <div class="login-page-wrap">
+      <div class="logo-box">
+        <img src="./images/naver.svg" alt="네이버로고" />
+      </div>
+      <form action="#" class="login-form">
+        <div class="default-form id">
+          <label for="userId" class="sr-only">아이디(이메일)</label>
+          <input
+            type="email"
+            name="userId"
+            id="userId"
+            placeholder="아이디(이메일)"
+            required
+          />
+          <p class="error-message">아이디는 이메일을 입력해 주세요</p>
+        </div>
+        <div class="default-form pwd">
+          <label for="userPwd" class="sr-only">비밀번호</label>
+          <input
+            type="password"
+            name="userPwd"
+            id="userPwd"
+            minlength="10"
+            placeholder="비밀번호"
+            required
+          />
+          <p class="error-message">비밀번호는 10자리 이상 입력해 주세요</p>
+        </div>
+        <div class="login-btn-form">
+          <label for="login-btn" class="sr-only">로그인</label>
+          <input
+            type="button"
+            id="login-btn"
+            class="login-btn"
+            value="로그인"
+          />
+        </div>
+        <div class="login-extra-check">
+          <div class="login-checkbox-form">
+            <label for="login-status">로그인 상태유지</label>
+            <input
+              type="checkbox"
+              name="login-status"
+              id="login-status"
+              checked
+            />
+          </div>
+          <div class="login-ip-form">
+            <label for="login-ip">
+              <a
+                href="../pages/ip_security.html"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                IP 보안
+              </a>
+            </label>
+            <input
+              type="checkbox"
+              name="login-ip"
+              id="login-ip"
+              class="checkbox"
+            />
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

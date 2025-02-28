@@ -1,0 +1,263 @@
+@import url(/src/common/modern-reset.css);
+
+/*=================================================
+        [CSS Variable]
+=================================================*/
+:root {
+  /* 색상 */
+  --gray-10: #dadada;
+  --gray-20: #999;
+  --gray-30: #666666;
+  --gray-40: #e9f0fd;
+  --white: #fff;
+  --black: #333;
+
+  --primary: #03cf5d;
+  --warning: #ff1414;
+  --custom-color: #24388d;
+
+  /* 폰트크기 */
+  --regular14: 0.875rem;
+  --regular12: 0.75rem;
+}
+/*=================================================
+        [CSS 스타일 초기화]
+=================================================*/
+
+/* 기본스타일 */
+body {
+  font-family: "Spoqa Han Sans Neo", "sans-serif";
+  color: var(--black, #333);
+  background: var(--white, #fff);
+  line-height: 1.15;
+  font-weight: 400;
+}
+
+/* 링크스타일 */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input {
+  --bg-color: var(--white);
+  --bg-focus-color: var(--gray-40);
+  --border-color: var(--gray-10);
+  --border-focus-color: var(--primary);
+  --light-text-color: var(--gray-20);
+  --text-color: var(--black);
+
+  margin: 0;
+  padding: 0;
+  color: inherit;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/*=================================================
+        [Component : logo-box]
+=================================================*/
+.logo-box {
+  width: 230px;
+  margin: 0 auto;
+
+  img {
+    width: 100%;
+  }
+}
+
+/*=================================================
+        [Component : default-form]
+        - input 입력 기본폼
+=================================================*/
+.default-form {
+  input {
+    width: 100%;
+    padding: 0.875rem;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+
+    font-size: var(--regular14);
+    font-weight: 400;
+    line-height: 1.5;
+
+    ::placeholder {
+      color: var(--light-text-color);
+    }
+
+    &:focus {
+      background-color: var(--bg-focus-color);
+
+      outline-color: var(--border-focus-color);
+    }
+
+    &:invalid:not(:placeholder-shown) {
+      outline-color: var(--warning);
+    }
+  }
+
+  .error-message {
+    display: none;
+    margin-top: 0.5rem;
+    font-size: var(--regular12);
+    color: var(--warning);
+  }
+
+  input:invalid:not(:placeholder-shown) + .error-message {
+    display: block;
+  }
+}
+
+/*=================================================
+        [Component : login-btn]
+        - 로그인 버튼
+=================================================*/
+.login-btn {
+  padding-block: 1rem;
+  width: 100%;
+
+  background-color: var(--primary);
+  border: none;
+
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+
+  &:focus,
+  &:active {
+    background-color: var(--custom-color);
+    outline: none;
+  }
+
+  &:disabled {
+    background-color: var(--gray-20);
+  }
+}
+
+/*=================================================
+        [Component : login-checkbox-form]
+        - input 체크박스
+=================================================*/
+.login-checkbox-form {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+
+  input {
+    width: 1.5rem;
+    height: 1.5rem;
+    order: -1;
+    appearance: none;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: url(../images/unchecked.svg) no-repeat center center;
+    }
+
+    &:checked::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: url(../images/checked.svg) no-repeat center center;
+    }
+  }
+}
+
+/*=================================================
+        [Component : login-status]
+        - IP보안
+=================================================*/
+.login-ip-form {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  input {
+    position: relative;
+    appearance: none;
+    width: 1.75rem;
+    height: 1.125rem;
+
+    &::before {
+      content: "OFF";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      display: block;
+
+      font-size: var(--regular14);
+      font-weight: 700;
+      color: var(--gray-20);
+    }
+
+    &:checked::before {
+      content: "ON";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      display: block;
+
+      font-size: var(--regular14);
+      font-weight: 700;
+      color: var(--primary);
+    }
+  }
+}
+
+/*=================================================
+        [Component : login-form]
+        - 컴포넌트 조합
+=================================================*/
+.login-form {
+  .default-form.pwd {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  .login-extra-check {
+    margin-top: 10px;
+  }
+}
+
+.login-extra-check {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    justify-content: flex-end;
+
+    .login-ip-form {
+      display: none;
+    }
+  }
+}
+/* ****************************************** */
+/* 컴포넌트 구분(임시) */
+.lists-item-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}

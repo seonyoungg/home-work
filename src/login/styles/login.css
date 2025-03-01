@@ -16,14 +16,12 @@ body {
 
 /* 로그인 요소 */
 .login-page-wrap {
-  /* padding: 70px 15px 111px 15px; */
-
   padding-inline: 1.25rem;
   padding-block: 4.375rem 7.5rem;
 
   display: flex;
   flex-flow: column nowrap;
-  gap: 45px;
+  gap: 2.8125rem;
 
   @media (min-width: 768px) {
     width: 500px;

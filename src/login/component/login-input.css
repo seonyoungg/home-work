@@ -19,6 +19,7 @@
   /* 폰트크기 */
   --regular14: 0.875rem;
   --regular12: 0.75rem;
+  --regular16: 1rem;
 }
 /*=================================================
         [CSS 스타일 초기화]
@@ -68,7 +69,7 @@ input {
         [Component : logo-box]
 =================================================*/
 .logo-box {
-  width: 230px;
+  width: 14.375rem;
   margin: 0 auto;
 
   img {
@@ -101,7 +102,7 @@ input {
       outline-color: var(--border-focus-color);
     }
 
-    &:invalid:not(:placeholder-shown) {
+    &:user-invalid:not(:placeholder-shown) {
       outline-color: var(--warning);
     }
   }
@@ -113,9 +114,13 @@ input {
     color: var(--warning);
   }
 
-  input:invalid:not(:placeholder-shown) + .error-message {
+  input:user-invalid:not(:placeholder-shown) + .error-message {
     display: block;
   }
+
+  /* 
+  invalid 와 user-invalid 차이 한번 더 알아보기!!!!!!
+  */
 }
 
 /*=================================================
@@ -129,7 +134,7 @@ input {
   background-color: var(--primary);
   border: none;
 
-  font-size: 1rem;
+  font-size: var(--regular16);
   font-weight: 700;
   color: var(--white);
 
@@ -189,22 +194,22 @@ input {
         - IP보안
 =================================================*/
 .login-ip-form {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  font-size: var(--regular16);
+
+  label {
+    float: left;
+    margin-right: 0.3125rem;
+  }
 
   input {
-    position: relative;
-    appearance: none;
     width: 1.75rem;
-    height: 1.125rem;
+    transform: translateY(-1px);
+    appearance: none;
 
     &::before {
       content: "OFF";
-      position: absolute;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
+      width: 100%;
+      height: 100%;
       display: block;
 
       font-size: var(--regular14);
@@ -214,10 +219,8 @@ input {
 
     &:checked::before {
       content: "ON";
-      position: absolute;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
+      width: 100%;
+      height: 100%;
       display: block;
 
       font-size: var(--regular14);
@@ -233,24 +236,29 @@ input {
 =================================================*/
 .login-form {
   .default-form.pwd {
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin-top: 0.625rem;
+  }
+  .login-btn-form {
+    margin-top: 1.25rem;
   }
   .login-extra-check {
-    margin-top: 10px;
+    margin-top: 0.625rem;
   }
 }
 
 .login-extra-check {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: flex-end;
 
+  .login-ip-form {
+    display: none;
+  }
   @media (min-width: 768px) {
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
 
     .login-ip-form {
-      display: none;
+      display: block;
     }
   }
 }

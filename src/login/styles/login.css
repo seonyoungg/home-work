@@ -1,7 +1,47 @@
+/*=================================================
+        [CSS Variable]
+=================================================*/
+:root {
+  --text-color: #121212;
+}
+
+/*=================================================
+        [CSS 스타일 초기화]
+=================================================*/
+body {
+  font-size: 16px;
+  color: var(--text-color);
+  background: var(--white);
+}
+
+/* 로그인 요소 */
 .login-page-wrap {
-  padding: 70px 15px 111px 15px;
+  /* padding: 70px 15px 111px 15px; */
+
+  padding-inline: 1.25rem;
+  padding-block: 4.375rem 7.5rem;
 
   display: flex;
   flex-flow: column nowrap;
   gap: 45px;
+
+  @media (min-width: 768px) {
+    width: 500px;
+    margin: 0 auto;
+  }
+}
+
+/*=================================================
+        [Component : login-form]
+        - 컴포넌트 재정의
+=================================================*/
+.default-form,
+.login-btn-form {
+  input {
+    height: 2.8125rem;
+  }
+}
+
+.login-checkbox-form {
+  gap: 0.3125rem;
 }

@@ -11,17 +11,6 @@
     />
     <link rel="icon" href="/src/assets/favicon/likelion.svg" />
     <link
-      rel="stylesheet"
-      as="style"
-      crossorigin
-      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
-    />
-    <link
-      rel="stylesheet"
-      as="style"
-      href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT.css"
-    />
-    <link
       href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css"
       rel="stylesheet"
       type="text/css"
@@ -105,7 +94,7 @@
         <div class="login-btn-form">
           <label for="login-btn" class="sr-only">로그인</label>
           <input
-            type="button"
+            type="submit"
             id="login-btn"
             class="login-btn"
             value="로그인"
@@ -114,7 +103,7 @@
         <div class="login-btn-form" style="margin-top: 1rem">
           <label for="login-btn" class="sr-only">로그인</label>
           <input
-            type="button"
+            type="submit"
             id="login-btn"
             class="login-btn"
             value="로그인"
@@ -128,12 +117,7 @@
         <legend>폼/로그인 상태유지</legend>
         <div class="login-checkbox-form">
           <label for="login-status">로그인 상태유지</label>
-          <input
-            type="checkbox"
-            name="login-status"
-            id="login-status"
-            checked
-          />
+          <input type="checkbox" name="login-status" id="login-status" />
         </div>
       </fieldset>
 
@@ -196,12 +180,7 @@
         <div class="login-extra-check">
           <div class="login-checkbox-form">
             <label for="login-status">로그인 상태유지</label>
-            <input
-              type="checkbox"
-              name="login-status"
-              id="login-status"
-              checked
-            />
+            <input type="checkbox" name="login-status" id="login-status" />
           </div>
           <div class="login-ip-form">
             <label for="login-ip">
@@ -225,3 +204,6 @@
     </div>
   </body>
 </html>
+
+<!-- active 일때만 활성화되어야하는데 지금 걍 됨 : 승균님  -->
+<!-- checkbox 처음 로딩시 왜 반짝이는가 -->

@@ -9,10 +9,10 @@
 
 ### 3주차
 
-- [아바타](./src/avatars/avatars.html)
+- [아바타](./src/avatars/)
 - [회고](./src/avatars/avatars.md)
 
 ### 4주차
 
-- [로그인](./src/login/login.html)
+- [로그인](./src/login)
 - [회고](./src/login/login.md)

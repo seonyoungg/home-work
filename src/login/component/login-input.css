@@ -87,6 +87,7 @@ input {
     padding: 0.875rem;
     background-color: var(--bg-color);
     border: 1px solid var(--border-color);
+    border-radius: 0.25rem;
 
     font-size: var(--regular14);
     font-weight: 400;
@@ -102,8 +103,10 @@ input {
       outline-color: var(--border-focus-color);
     }
 
-    &:user-invalid:not(:placeholder-shown) {
+    &:invalid:not(:focus):not(:placeholder-shown) {
+      background-color: var(--bg-focus-color);
       outline-color: var(--warning);
+      border: 2px solid var(--warning);
     }
   }
 
@@ -114,7 +117,7 @@ input {
     color: var(--warning);
   }
 
-  input:user-invalid:not(:placeholder-shown) + .error-message {
+  input:invalid:not(:focus):not(:placeholder-shown) + .error-message {
     display: block;
   }
 

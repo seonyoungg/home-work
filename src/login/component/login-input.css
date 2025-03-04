@@ -120,10 +120,6 @@ input {
   input:invalid:not(:focus):not(:placeholder-shown) + .error-message {
     display: block;
   }
-
-  /* 
-  invalid 와 user-invalid 차이 한번 더 알아보기!!!!!!
-  */
 }
 
 /*=================================================
@@ -131,7 +127,6 @@ input {
         - 로그인 버튼
 =================================================*/
 .login-btn {
-  padding-block: 1rem;
   width: 100%;
 
   background-color: var(--primary);
@@ -163,14 +158,16 @@ input {
   gap: 0.25rem;
 
   input {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.6rem;
+    height: 1.6rem;
     order: -1;
     appearance: none;
-    background: url(../images/unchecked.svg) no-repeat center center;
+    background: url(../images/checkbox-icon.png) no-repeat center center;
+    background-position: -0.6rem center;
 
     &:checked {
-      background: url(../images/checked.svg) no-repeat center center;
+      background: url(../images/checkbox-icon.png) no-repeat center center;
+      background-position: -3.3rem center;
     }
   }
 }

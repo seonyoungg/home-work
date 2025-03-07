@@ -118,8 +118,10 @@
 
     .btn-group {
       margin-top: var(--small-spacing);
-      position: relative;
-      z-index: 2;
+
+      .btn {
+        z-index: 2;
+      }
     }
 
     .subtitle {

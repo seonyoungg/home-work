@@ -19,5 +19,5 @@
 - 
 ### 5주차
 
-- [로그인](./src/apple)
+- [애플](./src/apple)
 - [회고](./src/apple/apple.md)

@@ -1,3 +1,164 @@
 @import "./reset.css";
 @import "./theme.css";
 @import "./base.css";
+
+.component-wrap {
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/*=================================================
+        [Component : btn]
+        - 버튼 컴포넌트
+=================================================*/
+.btn {
+  display: inline-flex;
+  padding: var(--x-small-spacing) var(--small-spacing);
+  border-radius: 1.5rem;
+  text-align: center;
+  font-size: var(--xx-small-text);
+  font-weight: 400;
+
+  @media (min-width: 1024px) {
+    font-size: var(--x-small-text);
+  }
+}
+
+.btn-fill {
+  color: var(--white);
+  background: var(--black);
+
+  &:hover {
+    background: var(--black-100);
+  }
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--black-100);
+  border: 1px solid var(--black-100);
+
+  &:hover {
+    background: var(--black-100);
+    color: var(--white);
+  }
+}
+
+.btn-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--base-spacing);
+}
+
+/*=================================================
+        [Component : .text-wrap]
+        - 텍스트 컴포넌트
+=================================================*/
+.text-wrap {
+  text-align: center;
+
+  .title {
+    font-size: var(--large-text);
+    font-weight: 600;
+    margin-bottom: var(--small-spacing);
+  }
+
+  .subtitle {
+    font-size: var(--base-text);
+    font-weight: 400;
+    line-height: var(--line-normal);
+    margin-bottom: var(--x-small-spacing);
+  }
+
+  .text {
+    font-size: var(--small-text);
+    color: var(--gray);
+  }
+
+  @media (min-width: 1024px) {
+    .title {
+      font-size: var(--extra-large-text);
+    }
+    .subtitle {
+      font-size: var(--medium-text);
+    }
+  }
+}
+
+/*=================================================
+        [Component : .card-item]
+        - 카드 컴포넌트
+=================================================*/
+.card-item {
+  width: 100%;
+  height: var(--size);
+  display: grid;
+
+  background: #ddd;
+  color: var(--black);
+
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
+  .card-box {
+    grid-area: 1/1/-1/-1;
+    z-index: 1;
+  }
+
+  .card-inner {
+    grid-area: 1/1/-1/-1;
+    padding: var(--large-spacing);
+
+    .btn-group {
+      margin-top: var(--small-spacing);
+      position: relative;
+      z-index: 2;
+    }
+
+    .subtitle {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      @media (min-width: 1024px) {
+        flex-direction: row;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      padding: var(--extra-large-spacing);
+    }
+  }
+}
+
+.card-item.dark {
+  color: var(--white);
+
+  .btn-fill {
+    background: var(--blue-300);
+    color: var(--white);
+
+    &:hover {
+      background: var(--blue-200);
+    }
+  }
+
+  .btn-outline {
+    color: var(--blue-300);
+    border: 1px solid var(--blue-300);
+
+    &:hover {
+      background: var(--blue-300);
+      color: var(--white);
+    }
+  }
+}

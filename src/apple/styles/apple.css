@@ -1,3 +1,104 @@
 @import "./card-component.css";
+@import url("https://cdn.jsdelivr.net/gh/sahibjotsaggu/SF-Font@latest/SFPro.css");
 
+body {
+  font-family: "SF Pro Display", sans-serif;
+}
 /* 카드 레이아웃 */
+
+.card-container {
+  display: grid;
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+  }
+}
+
+.card-item.ipad-pro {
+  background: url(../products/ipad_pro.jpeg) no-repeat center/cover;
+
+  @media (min-resolution: 192dpi) {
+    background: url(../products/ipad_pro_2x.jpeg) no-repeat center/cover;
+  }
+  @media (min-width: 1024px) {
+    background:
+      url(../products/ipad_pro_wide.jpeg) no-repeat center20px / cover,
+      #000;
+  }
+  @media (min-width: 1024px) and (min-resolution: 192dpi) {
+    background:
+      url(../products/ipad_pro_wide_2x.jpeg) no-repeat center 20px / cover,
+      #000;
+  }
+}
+
+.card-item.ipad-air {
+  background: url(../products/ipad_air.jpeg) no-repeat center/cover;
+
+  @media (min-resolution: 192dpi) {
+    background: url(../products/ipad_air_2x.jpeg) no-repeat center/cover;
+  }
+  @media (min-width: 1024px) {
+    background:
+      url(../products/ipad_air_wide.jpeg) no-repeat center 20px / cover,
+      #addcee;
+  }
+  @media (min-width: 1024px) and (min-resolution: 192dpi) {
+    background:
+      url(../products/ipad_air_wide_2x.jpeg) no-repeat center 20px / cover,
+      #addcee;
+  }
+}
+
+.card-item.iphone-pro {
+  background: url(../products/iphone15_pro.jpeg) no-repeat center/cover;
+
+  @media (min-resolution: 192dpi) {
+    background: url(../products/iphone15_pro_2x.jpeg) no-repeat center/cover;
+  }
+  @media (min-width: 1024px) {
+    background:
+      url(../products/iphone15_pro_wide.jpeg) no-repeat center 30px / cover,
+      #000;
+  }
+  @media (min-width: 1024px) and (min-resolution: 192dpi) {
+    background:
+      url(../products/iphone15_pro_wide_2x.jpeg) no-repeat center 30px / cover,
+      #000;
+  }
+}
+
+.card-item.iphone {
+  background: url(../products/iphone15.jpeg) no-repeat center/cover;
+
+  @media (min-resolution: 192dpi) {
+    background: url(../products/iphone15_2x.jpeg) no-repeat center/cover;
+  }
+}
+
+.card-item.watch {
+  background: url(../products/apple_watch.jpeg) no-repeat center/cover;
+
+  @media (min-resolution: 192dpi) {
+    background: url(../products/apple_watch_2x.jpeg) no-repeat center/cover;
+  }
+}
+
+.card-item.macbook {
+  background:
+    url(../products/macbook_air.jpeg) no-repeat center 50px / cover,
+    #f5f5f7;
+
+  @media (min-resolution: 192dpi) {
+    background: url(../products/macbook_air_2x.jpeg) no-repeat center/cover;
+  }
+}
+
+.card-item.airpods {
+  background: url(../products/airpods_pro.jpeg) no-repeat center/cover;
+
+  @media (min-resolution: 192dpi) {
+    background: url(../products/airpods_pro_2x.jpeg) no-repeat center/cover;
+  }
+}

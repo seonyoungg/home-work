@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
@@ -6,11 +6,64 @@
     <title>Apple Card Component</title>
     <link rel="icon" href="./favicon/apple-favicon.svg" />
     <link rel="apple-touch-icon" href="./favicon/apple-favicon.svg" />
-    <link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT/fonts/variable/woff2/SUIT-Variable.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT/fonts/variable/woff2/SUIT-Variable.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./styles/card-component.css" />
   </head>
   <body>
-    <!-- 카드 컴포넌트 -->
+    <!-- 버튼 컴포넌트 -->
+    <div class="component-wrap">
+      <p>버튼컴포넌트</p>
+      <a href="#" class="btn btn-fill">더 알아보기</a>
+      <a href="#" class="btn btn-fill dark">더 알아보기</a>
+      <a href="#" class="btn btn-outline">가격 보기</a>
+      <a href="#" class="btn btn-outline dark">가격 보기</a>
+    </div>
 
+    <!-- 텍스트 컴포넌트 -->
+    <div class="component-wrap">
+      <p>텍스트컴포넌트</p>
+      <div class="text-wrap">
+        <h4 class="title">title</h4>
+        <p class="subtitle">subtitle</p>
+        <p class="text">text</p>
+      </div>
+    </div>
+
+    <!-- 카드 컴포넌트 -->
+    <div class="component-wrap">
+      <p>카드컴포넌트</p>
+      <div class="card-item">
+        <a href="#" class="card-box" target="_blank" rel="noopener noreferrer">
+        </a>
+        <div class="card-inner">
+          <div class="text-wrap">
+            <h4 class="title">title</h4>
+            <p class="subtitle">subtitle</p>
+            <p class="text">text</p>
+          </div>
+          <div class="btn-group">
+            <a
+              href="/"
+              class="btn btn-fill"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              더 알아보기
+            </a>
+            <a
+              href="/"
+              class="btn btn-outline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              가격 보기
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

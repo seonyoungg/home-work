@@ -4,8 +4,12 @@
 body {
   font-family: "SF Pro Display", sans-serif;
 }
-/* 카드 레이아웃 */
 
+main {
+  padding-top: 64px;
+}
+
+/* 카드 레이아웃 */
 .card-container {
   display: grid;
 

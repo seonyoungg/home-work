@@ -28,4 +28,4 @@ media (min-width:1024px) {
 
 ## 과제 결과
 
-  <img src="./img/apple-ex.gif" alt="과제결과gif" width=600 />
+<img src="./img/apple-ex.gif" alt="과제결과gif" width=600 />

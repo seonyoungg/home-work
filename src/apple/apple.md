@@ -28,6 +28,4 @@ media (min-width:1024px) {
 
 ## 과제 결과
 
-<video src="./img/apple-md.mp4" width="500" autoplay controls></video>
-
-<img src="./img/apple-md.gif" alt="" width=600 />
+  <img src="./img/apple-md.gif" alt="과제결과gif" width=600 />

@@ -103,10 +103,6 @@
   background: #ddd;
   color: var(--black);
 
-  &:not(:last-child) {
-    margin-bottom: 1rem;
-  }
-
   .card-link {
     grid-area: 1/1/-1/-1;
     z-index: 1;

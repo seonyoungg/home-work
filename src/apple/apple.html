@@ -3,13 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Apple Card Layout</title>
+    <title>Apple 공식 사이트 - 제품 소개</title>
+    <meta
+      name="description"
+      content="Apple의 혁신적인 제품들을 살펴보세요. iPad Pro, iPad Air, iPhone, Macbook 등 다양한 제품 정보를 확인할 수 있습니다."
+    />
     <link rel="icon" href="./favicon/apple-favicon.svg" />
     <link rel="apple-touch-icon" href="./favicon/apple-favicon.svg" />
     <link
       rel="preload"
       as="font"
       href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT-Regular.woff2"
+      crossorigin
     />
     <link
       href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT/fonts/variable/woff2/SUIT-Variable.css"
@@ -19,44 +24,53 @@
   </head>
   <body>
     <!-- header -->
-    <header class="header">
+    <header class="header" role="banner">
       <div class="container">
-        <a href="#" class="header-logo"
-          ><img src="./img/apple.svg" alt="애플로고" />
+        <a href="#" class="header-logo">
+          <span class="sr-only">애플메인홈페이지로 이동</span>
+          <img src="./img/apple.svg" alt="Apple로고" />
         </a>
-        <ul class="menu-lists">
-          <li><a href="#">스토어</a></li>
-          <li><a href="#">Mac</a></li>
-          <li><a href="#">iPad</a></li>
-          <li><a href="#">iPhone</a></li>
-          <li><a href="#">Watch</a></li>
-          <li><a href="#">Vision</a></li>
-          <li><a href="#">AirPods</a></li>
-          <li><a href="#">TV 및 홈</a></li>
-          <li><a href="#">엔터테인먼트</a></li>
-          <li><a href="#">액세서리</a></li>
-          <li><a href="#">고객지원</a></li>
-        </ul>
+        <nav>
+          <ul id="main-menu" class="menu-lists">
+            <li><a href="#" aria-current="false">스토어</a></li>
+            <li><a href="#" aria-current="false">Mac</a></li>
+            <li><a href="#" aria-current="false">iPad</a></li>
+            <li><a href="#" aria-current="false">iPhone</a></li>
+            <li><a href="#" aria-current="false">Watch</a></li>
+            <li><a href="#" aria-current="false">Vision</a></li>
+            <li><a href="#" aria-current="false">AirPods</a></li>
+            <li><a href="#" aria-current="false">TV 및 홈</a></li>
+            <li><a href="#" aria-current="false">엔터테인먼트</a></li>
+            <li><a href="#" aria-current="false">액세서리</a></li>
+            <li><a href="#" aria-current="false">고객지원</a></li>
+          </ul>
+        </nav>
         <div class="header-nav">
           <a href="#" class="icon search">
-            <img src="./img/search.svg" alt="검색창" />
+            <span class="sr-only">검색하기</span>
+            <img src="./img/search.svg" alt="검색아이콘" aria-hidden="true" />
           </a>
           <a href="#" class="icon bag">
-            <img src="./img/bag.svg" alt="장바구니바로가기" />
+            <span class="sr-only">장바구니</span>
+            <img src="./img/bag.svg" alt="장바구니" aria-hidden="true" />
           </a>
           <a href="#" class="icon menu">
-            <img src="./img/list.svg" alt="메뉴펼쳐보기" />
+            <span class="sr-only">전체메뉴보기</span>
+            <img src="./img/list.svg" alt="menu" aria-hidden="true" />
           </a>
         </div>
       </div>
     </header>
-    <main>
-      <div class="card-item dark ipad-pro">
-        <a href="#" class="card-box" target="_blank" rel="noopener noreferrer">
-        </a>
+
+    <!-- main -->
+    <main id="main-content">
+      <h1 class="sr-only">Apple 제품 소개</h1>
+
+      <section class="card-item ipad-pro dark" aria-labelledby="ipad-pro">
+        <a href="#" class="card-link" aria-labelledby="ipad-pro"></a>
         <div class="card-inner">
           <div class="text-wrap">
-            <h4 class="title">iPad Pro</h4>
+            <h4 id="ipad-pro" class="title">iPad Pro</h4>
             <p class="subtitle">
               <span>놀라우리만치 얇다.</span>
               <span>엄청나게 강력하다.</span>
@@ -64,31 +78,21 @@
             <p class="text">출시일 추후 공개</p>
           </div>
           <div class="btn-group">
-            <a
-              href="#"
-              class="btn btn-fill"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="#" class="btn btn-fill" aria-label="iPad Pro 더 알아보기">
               더 알아보기
             </a>
-            <a
-              href="#"
-              class="btn btn-outline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="#" class="btn btn-outline" aria-label="iPad Pro 가격 보기">
               가격 보기
             </a>
           </div>
         </div>
-      </div>
-      <div class="card-item ipad-air">
-        <a href="#" class="card-box" target="_blank" rel="noopener noreferrer">
-        </a>
+      </section>
+
+      <section class="card-item ipad-air" aria-labelledby="ipad-air">
+        <a href="#" class="card-link" aria-labelledby="ipad-air"></a>
         <div class="card-inner">
           <div class="text-wrap">
-            <h4 class="title">iPad Air</h4>
+            <h4 id="ipad-air" class="title">iPad Air</h4>
             <p class="subtitle">
               <span>두 가지 사이즈. 더 빠른 칩.</span>
               <span>무엇이든 거뜬하게.</span>
@@ -96,31 +100,21 @@
             <p class="text">출시일 추후 공개</p>
           </div>
           <div class="btn-group">
-            <a
-              href="#"
-              class="btn btn-fill"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="#" class="btn btn-fill" aria-label="iPad Air 더 알아보기">
               더 알아보기
             </a>
-            <a
-              href="#"
-              class="btn btn-outline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="#" class="btn btn-outline" aria-label="iPad Air 가격 보기">
               가격 보기
             </a>
           </div>
         </div>
-      </div>
-      <div class="card-item dark iphone-pro">
-        <a href="#" class="card-box" target="_blank" rel="noopener noreferrer">
-        </a>
+      </section>
+
+      <section class="card-item iphone-pro dark" aria-labelledby="iphone-pro">
+        <a href="#" class="card-link" aria-labelledby="iphone-pro"></a>
         <div class="card-inner">
           <div class="text-wrap">
-            <h4 class="title">iPhone 15 Pro</h4>
+            <h4 id="iphone-pro" class="title">iPhone 15 Pro</h4>
             <p class="subtitle">
               <span>티타늄. 초강력. 초경량. 초프로.</span>
             </p>
@@ -129,34 +123,28 @@
             <a
               href="#"
               class="btn btn-fill"
-              target="_blank"
-              rel="noopener noreferrer"
+              aria-label="iPhone 15 Pro 더 알아보기"
             >
               더 알아보기
             </a>
             <a
               href="#"
               class="btn btn-outline"
-              target="_blank"
-              rel="noopener noreferrer"
+              aria-label="iPhone 15 Pro 가격 보기"
             >
               가격 보기
             </a>
           </div>
         </div>
-      </div>
+      </section>
+
       <div class="card-container">
-        <div class="card-item iphone">
-          <a
-            href="#"
-            class="card-box"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-          </a>
+        <section class="card-item iphone" aria-labelledby="iphone">
+          <a href="#" class="card-link" aria-labelledby="iphone"></a>
+
           <div class="card-inner">
             <div class="text-wrap">
-              <h4 class="title">iPhone 15</h4>
+              <h4 id="iphone" class="title">iPhone 15</h4>
               <p class="subtitle">
                 <span>새로운 카메라.</span>
                 <span>새로운 디자인.</span>
@@ -167,33 +155,26 @@
               <a
                 href="#"
                 class="btn btn-fill"
-                target="_blank"
-                rel="noopener noreferrer"
+                aria-label="iPhone 15 더 알아보기"
               >
                 더 알아보기
               </a>
               <a
                 href="#"
                 class="btn btn-outline"
-                target="_blank"
-                rel="noopener noreferrer"
+                aria-label="iPhone 15 가격 보기"
               >
                 가격 보기
               </a>
             </div>
           </div>
-        </div>
-        <div class="card-item dark watch">
-          <a
-            href="#"
-            class="card-box"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-          </a>
+        </section>
+
+        <section class="card-item watch dark" aria-labelledby="apple-watch">
+          <a href="#" class="card-link" aria-labelledby="apple-watch"></a>
           <div class="card-inner">
             <div class="text-wrap">
-              <h4 class="title">WATCH</h4>
+              <h4 id="apple-watch" class="title">WATCH</h4>
               <p class="subtitle">
                 <span>보다 똑똑. 보다 또렷. 보다 강력.</span>
               </p>
@@ -202,33 +183,26 @@
               <a
                 href="#"
                 class="btn btn-fill"
-                target="_blank"
-                rel="noopener noreferrer"
+                aria-label="Apple watch 더 알아보기"
               >
                 더 알아보기
               </a>
               <a
                 href="#"
                 class="btn btn-outline"
-                target="_blank"
-                rel="noopener noreferrer"
+                aria-label="Apple watch 가격 보기"
               >
                 가격 보기
               </a>
             </div>
           </div>
-        </div>
-        <div class="card-item macbook">
-          <a
-            href="#"
-            class="card-box"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-          </a>
+        </section>
+
+        <section class="card-item macbook" aria-labelledby="macbook">
+          <a href="#" class="card-link" aria-labelledby="macbook"></a>
           <div class="card-inner">
             <div class="text-wrap">
-              <h4 class="title">Macbook Air</h4>
+              <h4 id="macbook" class="title">Macbook Air</h4>
               <p class="subtitle">
                 <span>날렵하게. 강력하게. M3답게.</span>
               </p>
@@ -237,33 +211,26 @@
               <a
                 href="#"
                 class="btn btn-fill"
-                target="_blank"
-                rel="noopener noreferrer"
+                aria-label="Macbook Air 더 알아보기"
               >
                 더 알아보기
               </a>
               <a
                 href="#"
                 class="btn btn-outline"
-                target="_blank"
-                rel="noopener noreferrer"
+                aria-label="Macbook Air 가격 보기"
               >
                 가격 보기
               </a>
             </div>
           </div>
-        </div>
-        <div class="card-item dark airpods">
-          <a
-            href="#"
-            class="card-box"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-          </a>
+        </section>
+
+        <section class="card-item dark airpods" aria-labelledby="airpods">
+          <a href="#" class="card-link" aria-labelledby="airpods"></a>
           <div class="card-inner">
             <div class="text-wrap">
-              <h4 class="title">airPods Pro</h4>
+              <h4 id="airpods" class="title">airPods Pro</h4>
               <p class="subtitle">
                 <span>전에 없던 청취 경험.</span>
                 <span>적응형 오디오.</span>
@@ -273,22 +240,20 @@
               <a
                 href="#"
                 class="btn btn-fill"
-                target="_blank"
-                rel="noopener noreferrer"
+                aria-label="airPods Pro 더 알아보기"
               >
                 더 알아보기
               </a>
               <a
                 href="#"
                 class="btn btn-outline"
-                target="_blank"
-                rel="noopener noreferrer"
+                aria-label="airPods Pro 가격 보기"
               >
                 가격 보기
               </a>
             </div>
           </div>
-        </div>
+        </section>
       </div>
     </main>
   </body>

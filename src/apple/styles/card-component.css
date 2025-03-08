@@ -107,7 +107,7 @@
     margin-bottom: 1rem;
   }
 
-  .card-box {
+  .card-link {
     grid-area: 1/1/-1/-1;
     z-index: 1;
   }
@@ -115,12 +115,14 @@
   .card-inner {
     grid-area: 1/1/-1/-1;
     padding: var(--large-spacing);
+    pointer-events: none;
 
     .btn-group {
       margin-top: var(--small-spacing);
 
       .btn {
         z-index: 2;
+        pointer-events: auto;
       }
     }
 
@@ -221,12 +223,3 @@
     }
   }
 }
-
-/* .button-group {
-  button {
-    background: var(--blue-200);
-  }
-} */
-/* .button-group button {
-  background: yellow;
-} */

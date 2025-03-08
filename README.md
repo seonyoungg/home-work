@@ -1,6 +1,9 @@
 # 프론트엔드 부트캠프 과제 저장소
 
+ <img src="./assets/images/yurang.jpg" alt="울면서공부하는망곰이" width="200" height="200" >
+<p style="text-align:center;">
 13기 박선영🐥
+</p>
 
 ## HTML/CSS 슬비쌤과제💜
 | 주차   | 항목         | 회고                        |

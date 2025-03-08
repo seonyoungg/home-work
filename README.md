@@ -1,9 +1,9 @@
 # 프론트엔드 부트캠프 과제 저장소
 
 <div style="display:flex; align-items:center; flex-direction:row-reverse; justify-content:flex-end;">
-  <h3>
-  13기 박선영
-  </h3>
+  <h2>
+  13기 박선영😉
+  </h2>
   <img src="./src/assets/images/c-6.gif" alt="" width=150 />
 </div>
 
